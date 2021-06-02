@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+#   pending "add some examples to (or delete) #{__FILE__}"
+# end
 
   it { should validate_uniqueness_of(:email) }
   subject(:koby) { User.create(
@@ -40,7 +40,7 @@ end
 describe "password encryption" do
   it "does not save password to the database" do
       create(:harry_potter)
-      user = User.find_by(username: "Harry Potter")
+      user = User.find_by(email: "harry@porter.com")
       expect(user.password).not_to equal("password")
       # there shouldn't be a password (not saved to db)
   end
